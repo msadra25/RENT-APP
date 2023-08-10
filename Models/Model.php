@@ -1,4 +1,4 @@
-<?php
+<?php namespace Models;
 
 interface Model{
     public function save($key, $value);

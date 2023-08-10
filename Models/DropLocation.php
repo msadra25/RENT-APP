@@ -1,5 +1,5 @@
-<?php
-
+<?php namespace Models;
+ 
 class DropLocation implements Model{
     
     public $carId;

@@ -1,4 +1,4 @@
-<?php
+<?php namespace Models;
 
 class Rent implements Model{
 

@@ -1,4 +1,4 @@
-<?php
+<?php namespace Models;
 
 class Feedbacks implements Model{
 
