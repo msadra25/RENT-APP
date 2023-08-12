@@ -25,7 +25,7 @@ $dbh = new PDO("mysql:host=mysql;dbname=RENT_APP", "root", "1234");
 $response = UserController::login($data);
 header('Content-Type: application/json; charset=utf-8');
 echo json_encode($response);
-
+//TEST
 // $path = $_GET["path"];
 
 // if(strcmp($path,"register")== 0){
