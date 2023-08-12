@@ -1,13 +1,17 @@
 <?php
 
-use Models;
-use Controllers;
+declare(strict_types=1);
+// use Models;
+// use Controllers;
+// use Controllers\UserController;
+require_once 'Models/Model.php';
+require_once 'Controllers/UserController.php';
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
-require_once('../vendor/autoload.php');
-declare(strict_types=1);
+require __DIR__ . '/vendor/autoload.php';
 
-$dbh = new PDO("mysql:host=mysql;dbname=RENT_APP", "root", "1234");
+
+// $dbh = new PDO("mysql:host=mysql;dbname=RENT_APP", "root", "1234");
 
 // $sql = 'DROP TABLE Customers;';
 
@@ -17,8 +21,16 @@ $dbh = new PDO("mysql:host=mysql;dbname=RENT_APP", "root", "1234");
 //$hasValidCredentials = true;
 $json = file_get_contents('php://input');
 $data = json_decode($json);
+$dbh = new PDO("mysql:host=mysql;dbname=RENT_APP", "root", "1234");
+$response = UserController::login($data);
+header('Content-Type: application/json; charset=utf-8');
+echo json_encode($response);
 
+// $path = $_GET["path"];
 
+// if(strcmp($path,"register")== 0){
+//     UserController::register($data);
+// }
 
 // $key = '68V0zWFrS72GbpPreidkQFLfj4v9m3Ti+DXc8OB0gcM=';
 // $date = new DateTimeImmutable();
