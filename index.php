@@ -7,7 +7,8 @@ require_once 'Controllers/UserController.php';
 
 // use Models;
 // use Controllers;
-// use Controllers\UserController;
+use Controllers\UserController\UserController as UserController;
+
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 use Models\User;
@@ -24,6 +25,8 @@ if(strcmp($path,"register")== 0){
     echo json_encode(UserController::register($data));
 }elseif(strcmp($path,"login")== 0){
     echo json_encode(UserController::login($data));
+}elseif(strcmp($path,"test")== 0){
+    echo json_encode(UserController::test($data, getallheaders()));
 }
 
 

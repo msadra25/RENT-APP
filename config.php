@@ -1,0 +1,3 @@
+<?php
+$APP_NAME = "RENT_APP";
+$JWT_KEY = '68V0zWFrS72GbpPreidkQFLfj4v9m3Ti+DXc8OB0gcM=';
