@@ -20,17 +20,20 @@ class UserController{
         $result = $sth->fetchAll();
 
         if($result != NULL){
-            echo "the username exists";  
+            return ["status" => false,
+                    "massage" => "the username exists"];  
 
         }else{
             $sql = "INSERT INTO User (Username, Password, FirstName, LastName)
             VALUES ('$username', '$password', '$firstName', '$lastName');";
             $sth = $dbh->prepare($sql);
             $sth->execute();
-            echo "user registered";
+            return ["status" => true,
+                    "massage" => "user registered"];
         }
     } 
     
+
     public static function login($data){
         global $dbh;
         $username = $data->Username;
@@ -66,9 +69,18 @@ class UserController{
                 "message" => "password is incorrect"];
             }
         }
- 
+    }
+
+    public static function forgetPassword($data){
 
 
+    }
 
+    public static function sendVerificationCode(){
+
+    }
+
+    public static function verifyCode(){
+        
     }
 }
